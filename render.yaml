@@ -1,0 +1,66 @@
+# Render Blueprint：PostgreSQL + API + 管理後台
+# 文件：https://render.com/docs/blueprint-spec
+# 使用：把此 repo 連到 Render 後選擇 "Blueprint"，指向本檔。
+
+databases:
+  - name: youngadult-db
+    plan: free
+    databaseName: youngadult
+    user: youngadult
+
+services:
+  - type: web
+    name: youngadult-api
+    runtime: node
+    plan: free
+    rootDir: apps/api
+    # 免費方案 build 常省略 devDependencies；必須 --include=dev 才能跑 tsc / prisma
+    buildCommand: npm install --legacy-peer-deps --include=dev && npx prisma generate && npm run build
+    startCommand: npm run start:render
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "3000"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: youngadult-db
+          property: connectionString
+      - key: CORS_ORIGINS
+        value: "http://localhost:3001,http://127.0.0.1:3001,http://localhost:8081,http://127.0.0.1:8081,https://youngadult-admin.onrender.com"
+      - key: JWT_ACCESS_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      - key: JWT_ACCESS_TTL
+        value: 900s
+      - key: JWT_REFRESH_TTL
+        value: 30d
+      - key: FIELD_ENCRYPTION_KEY
+        sync: false
+      - key: YOUTUBE_CHANNEL_ID
+        value: UCdcDDnZj76AwNqj18jtTAgw
+      - key: YOUTUBE_CHANNEL_URL
+        value: https://www.youtube.com/@breadoflifechristianchurch9830
+      - key: SEED_ADMIN_PASSWORD
+        sync: false
+
+  - type: web
+    name: youngadult-admin
+    runtime: node
+    plan: free
+    rootDir: apps/admin-web
+    # 必須 -H 0.0.0.0，否則 Render 對外連不到（白屏／逾時）
+    buildCommand: npm install --legacy-peer-deps --include=dev && npm run build
+    startCommand: npx next start -H 0.0.0.0 -p $PORT
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOSTNAME
+        value: "0.0.0.0"
+      - key: NEXT_PUBLIC_API_BASE
+        value: https://youngadult-api.onrender.com/api
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"

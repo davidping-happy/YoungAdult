@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "社青牧區",
+    "slug": "youngadult",
+    "owner": "davidping",
+    "version": "1.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "scheme": "youngadult",
+    "icon": "./assets/icon.png",
+    "backgroundColor": "#FBF6F0",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "org.church.youngadult"
+    },
+    "android": {
+      "package": "org.church.youngadult",
+      "versionCode": 2,
+      "usesCleartextTraffic": true,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#C46B4A"
+      }
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash.png",
+          "imageWidth": 220,
+          "resizeMode": "contain",
+          "backgroundColor": "#FBF6F0"
+        }
+      ]
+    ],
+    "extra": {
+      "apiBase": "https://youngadult-api.onrender.com/api",
+      "eas": {
+        "projectId": ""
+      }
+    }
+  }
+}
