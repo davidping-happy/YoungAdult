@@ -1,4 +1,7 @@
-# 24 小時對外測試：API + 管理後台雲端部署
+# 社青牧區：API + 管理後台雲端部署（Render）
+
+> **重要：** `churchsheep-admin.onrender.com` 是「成二牧區」。  
+> 「社青牧區」必須用本 repo（YoungAdult）另外建立 Blueprint，網址才會是 `youngadult-admin.onrender.com`。
 
 本機 `localhost` 與通道在電腦關機／休眠後會失效。把 **API** 與 **管理後台** 放到 Render 後，關機仍可使用。
 
@@ -11,39 +14,47 @@
 
 ---
 
-## 一、已有 Blueprint（你目前的狀況）
+## 一、第一次部署（現在請做這段）
 
-設定已推上 GitHub（含 `youngadult-admin`）。請：
+GitHub 程式已就緒：https://github.com/davidping-happy/YoungAdult
 
-1. 打開 Render → **Blueprints** → **youngadult**
-2. 按 **Manual Sync**（或 Update）套用最新 `render.yaml`
-3. 確認會新增／部署 Web Service：**youngadult-admin**
-4. 到 **youngadult-api** → Environment，把 `CORS_ORIGINS` 設成（或確認含後台網址）：
+1. 打開 <https://dashboard.render.com> → 右上角 **New** → **Blueprint**
+2. 連線 GitHub，選 repo：**`davidping-happy/YoungAdult`**（不要選 sheep / churchsheep）
+3. Branch：`main`；Blueprint 檔：`render.yaml`
+4. 填兩個必填環境變數：
+   - `SEED_ADMIN_PASSWORD`：管理員登入密碼（自己設，請記住）
+   - `FIELD_ENCRYPTION_KEY`：64 字元 hex，可用 PowerShell 產生：
 
+```powershell
+python -c "import secrets; print(secrets.token_hex(32))"
 ```
-http://localhost:3001,http://127.0.0.1:3001,http://localhost:8081,http://127.0.0.1:8081,https://youngadult-admin.onrender.com
-```
 
-5. API 與後台都變成 **Live** 後，用瀏覽器打開：
+5. 按 **Apply**／Deploy  
+   會建立：`youngadult-db`、`youngadult-api`、`youngadult-admin`
+6. 兩個 Web 都變成 **Live** 後開啟：
 
 ```
 https://youngadult-admin.onrender.com
 https://youngadult-admin.onrender.com/prayer
 ```
 
-登入：`admin@church.local` ／ Render 上的 `SEED_ADMIN_PASSWORD`  
-（若尚無管理員，API 重啟時會依該密碼自動建立。）
+登入：`admin@church.local` ／ 你剛設的 `SEED_ADMIN_PASSWORD`  
+側欄應顯示 **社青牧區**（不是成二）。
 
-> 實際網址以服務頁上方為準。第一次開啟可能要等 30～60 秒（免費方案休眠喚醒）。
+> 第一次開啟可能要等 30～60 秒（免費方案休眠喚醒）。  
+> 若免費額度不足，可先在 Render 把成二的 free 服務 **Suspend**，再開社青。
 
 ---
 
-## 二、全新 Blueprint（第一次部署時）
+## 二、之後更新程式碼
 
-1. <https://dashboard.render.com> → **New** → **Blueprint**
-2. 選 repo、`main`、`render.yaml`
-3. 填 `SEED_ADMIN_PASSWORD`、`FIELD_ENCRYPTION_KEY`
-4. Deploy 後會建立：`youngadult-db`、`youngadult-api`、`youngadult-admin`
+1. 打開 Render → **Blueprints** → **youngadult**（或你命名的 Blueprint）
+2. **Manual Sync** 套用最新 `render.yaml`，或等 Git auto-deploy
+3. 確認 CORS 含：
+
+```
+http://localhost:3001,http://127.0.0.1:3001,http://localhost:8081,http://127.0.0.1:8081,https://youngadult-admin.onrender.com
+```
 
 ---
 
