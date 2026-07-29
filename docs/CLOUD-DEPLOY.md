@@ -41,8 +41,20 @@ https://youngadult-admin.onrender.com/prayer
 登入：`admin@church.local` ／ 你剛設的 `SEED_ADMIN_PASSWORD`  
 側欄應顯示 **社青牧區**（不是成二）。
 
-> 第一次開啟可能要等 30～60 秒（免費方案休眠喚醒）。  
-> 若免費額度不足，可先在 Render 把成二的 free 服務 **Suspend**，再開社青。
+> 第一次開啟可能要等 30～60 秒（免費方案休眠喚醒）。
+
+### 若出現 `cannot have more than one active free tier database`
+
+Render **整個帳號只能有 1 個免費資料庫**。成二的 `churchsheep-db` 還在 Active 時，社青的 `youngadult-db` 會失敗。
+
+**作法 A（最簡單，社青上線、成二雲端先暫停）：**
+
+1. Render → **Databases** → **churchsheep-db** → **Suspend**（或 Delete）
+2. 回到 Blueprint **YoungAdult** → **Manual sync** → **Approve**
+3. 等 `youngadult-db`、`youngadult-api`、`youngadult-admin` 都成功
+
+**作法 B（成二＋社青都要 24h 在線）：**  
+其中一邊改用 Neon／Supabase 免費 Postgres（外部 `DATABASE_URL`），不要再向 Render 要第二個 free DB。
 
 ---
 
