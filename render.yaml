@@ -1,12 +1,6 @@
-# Render Blueprint：PostgreSQL + API + 管理後台
+# Render Blueprint：API + 管理後台（資料庫用 Neon，與成二共用 Render 免費額度）
 # 文件：https://render.com/docs/blueprint-spec
-# 使用：把此 repo 連到 Render 後選擇 "Blueprint"，指向本檔。
-
-databases:
-  - name: youngadult-db
-    plan: free
-    databaseName: youngadult
-    user: youngadult
+# 成二繼續用 Render 的 churchsheep-db；社青用 Neon 免費 Postgres（見 docs/CLOUD-DEPLOY.md）
 
 services:
   - type: web
@@ -23,10 +17,9 @@ services:
         value: production
       - key: PORT
         value: "3000"
+      # 在 Render Dashboard 貼上 Neon 的連線字串（含 ?sslmode=require）
       - key: DATABASE_URL
-        fromDatabase:
-          name: youngadult-db
-          property: connectionString
+        sync: false
       - key: CORS_ORIGINS
         value: "http://localhost:3001,http://127.0.0.1:3001,http://localhost:8081,http://127.0.0.1:8081,https://youngadult-admin.onrender.com"
       - key: JWT_ACCESS_SECRET

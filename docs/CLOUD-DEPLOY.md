@@ -1,68 +1,80 @@
-# 社青牧區：API + 管理後台雲端部署（Render）
+# 社青牧區：API + 管理後台雲端部署（Render + Neon）
 
 > **重要：** `churchsheep-admin.onrender.com` 是「成二牧區」。  
-> 「社青牧區」必須用本 repo（YoungAdult）另外建立 Blueprint，網址才會是 `youngadult-admin.onrender.com`。
+> 「社青牧區」網址是 `youngadult-admin.onrender.com`。  
+> **兩邊都要在線：** 成二繼續用 Render 免費 DB；社青改用 **Neon 免費 Postgres**（Render 帳號只能有 1 個 free DB）。
 
-本機 `localhost` 與通道在電腦關機／休眠後會失效。把 **API** 與 **管理後台** 放到 Render 後，關機仍可使用。
-
-| 項目 | 本機 | 雲端（Render） |
-|------|------|----------------|
-| 電腦可否關機 | 不行 | 可以 |
-| 會友 App | 需通道 | 連固定 API |
-| 同工後台 | http://localhost:3001 | https://youngadult-admin.onrender.com |
-| 費用（入門） | 免費 | Render 免費方案 |
+| 項目 | 成二牧區 | 社青牧區 |
+|------|----------|----------|
+| GitHub | sheep / churchsheep | YoungAdult |
+| API | churchsheep-api.onrender.com | youngadult-api.onrender.com |
+| 後台 | churchsheep-admin.onrender.com | youngadult-admin.onrender.com |
+| 資料庫 | Render `churchsheep-db`（免費） | **Neon**（免費） |
 
 ---
 
-## 一、第一次部署（現在請做這段）
+## 一、先建立 Neon 資料庫（社青專用）
 
-GitHub 程式已就緒：https://github.com/davidping-happy/YoungAdult
+1. 打開 <https://console.neon.tech> 註冊／登入（可用 GitHub）
+2. **New Project**
+   - Name：`youngadult`
+   - Region：選離台灣近的（如 Singapore / Sydney）
+3. 建立後到 **Dashboard** → **Connection string**
+4. 選 **URI**，複製字串（應類似）：
 
-1. 打開 <https://dashboard.render.com> → 右上角 **New** → **Blueprint**
-2. 連線 GitHub，選 repo：**`davidping-happy/YoungAdult`**（不要選 sheep / churchsheep）
-3. Branch：`main`；Blueprint 檔：`render.yaml`
-4. 填兩個必填環境變數：
-   - `SEED_ADMIN_PASSWORD`：管理員登入密碼（自己設，請記住）
-   - `FIELD_ENCRYPTION_KEY`：64 字元 hex，可用 PowerShell 產生：
+```
+postgresql://USER:PASSWORD@ep-xxxx.region.aws.neon.tech/neondb?sslmode=require
+```
+
+> 必須含 `sslmode=require`。這串就是等下要貼到 Render 的 `DATABASE_URL`。
+
+---
+
+## 二、部署社青到 Render（不要再建 Render 資料庫）
+
+程式已推上：https://github.com/davidping-happy/YoungAdult  
+`render.yaml` **已移除** `youngadult-db`，只建立兩個 Web：`youngadult-api`、`youngadult-admin`。
+
+1. Render → Blueprint **YoungAdult** → **Manual sync**（抓最新 commit）
+2. 確認變更只有：**Create web service youngadult-api**、**youngadult-admin**（不應再出現 Create database）
+3. **Approve** 前／後，在環境變數填：
+
+| 變數 | 值 |
+|------|-----|
+| `DATABASE_URL` | 剛從 Neon 複製的連線字串 |
+| `SEED_ADMIN_PASSWORD` | 管理員密碼（請自己記住） |
+| `FIELD_ENCRYPTION_KEY` | 64 字元 hex（見下方） |
+
+產生 `FIELD_ENCRYPTION_KEY`：
 
 ```powershell
 python -c "import secrets; print(secrets.token_hex(32))"
 ```
 
-5. 按 **Apply**／Deploy  
-   會建立：`youngadult-db`、`youngadult-api`、`youngadult-admin`
-6. 兩個 Web 都變成 **Live** 後開啟：
+4. 等兩個 Web 都 **Live** 後開啟：
 
 ```
 https://youngadult-admin.onrender.com
 https://youngadult-admin.onrender.com/prayer
 ```
 
-登入：`admin@church.local` ／ 你剛設的 `SEED_ADMIN_PASSWORD`  
-側欄應顯示 **社青牧區**（不是成二）。
+登入：`admin@church.local` ／ 你設的 `SEED_ADMIN_PASSWORD`  
+側欄應顯示 **社青牧區**。
 
-> 第一次開啟可能要等 30～60 秒（免費方案休眠喚醒）。
+成二維持：
 
-### 若出現 `cannot have more than one active free tier database`
+```
+https://churchsheep-admin.onrender.com
+```
 
-Render **整個帳號只能有 1 個免費資料庫**。成二的 `churchsheep-db` 還在 Active 時，社青的 `youngadult-db` 會失敗。
-
-**作法 A（最簡單，社青上線、成二雲端先暫停）：**
-
-1. Render → **Databases** → **churchsheep-db** → **Suspend**（或 Delete）
-2. 回到 Blueprint **YoungAdult** → **Manual sync** → **Approve**
-3. 等 `youngadult-db`、`youngadult-api`、`youngadult-admin` 都成功
-
-**作法 B（成二＋社青都要 24h 在線）：**  
-其中一邊改用 Neon／Supabase 免費 Postgres（外部 `DATABASE_URL`），不要再向 Render 要第二個 free DB。
+兩邊可同時使用，不必 Suspend `churchsheep-db`。
 
 ---
 
-## 二、之後更新程式碼
+## 三、之後更新程式碼
 
-1. 打開 Render → **Blueprints** → **youngadult**（或你命名的 Blueprint）
-2. **Manual Sync** 套用最新 `render.yaml`，或等 Git auto-deploy
-3. 確認 CORS 含：
+1. Render → Blueprints → YoungAdult → **Manual Sync**（或等 auto-deploy）
+2. 確認 `CORS_ORIGINS` 含：
 
 ```
 http://localhost:3001,http://127.0.0.1:3001,http://localhost:8081,http://127.0.0.1:8081,https://youngadult-admin.onrender.com
@@ -70,26 +82,29 @@ http://localhost:3001,http://127.0.0.1:3001,http://localhost:8081,http://127.0.0
 
 ---
 
-## 三、常用連結
+## 四、常用連結
 
 | 用途 | 網址 |
 |------|------|
-| API 健康檢查 | https://youngadult-api.onrender.com/api/health |
-| 雲端後台 | https://youngadult-admin.onrender.com |
-| 代禱審核 | https://youngadult-admin.onrender.com/prayer |
-| Android APK | 見 Expo Builds／HOW-TO-USE |
+| 社青 API 健康檢查 | https://youngadult-api.onrender.com/api/health |
+| 社青雲端後台 | https://youngadult-admin.onrender.com |
+| 社青代禱審核 | https://youngadult-admin.onrender.com/prayer |
+| 成二雲端後台 | https://churchsheep-admin.onrender.com |
 
 ---
 
-## 四、免費方案限制
+## 五、免費方案注意
 
-約 15 分鐘無人使用會休眠，下一個請求較慢。長期正式使用可再升級付費方案。
+- Render **Web** 免費服務約 15 分鐘無人使用會休眠，第一次開啟可能要等 30～60 秒（兩邊都一樣）。
+- 真正「從不休眠」需 Render 付費方案；本文件的「兩邊都在線」指：**關機後仍可用固定網址開啟兩邊**，不必二選一關服務。
 
 ---
 
-## 五、檢查清單
+## 六、檢查清單
 
+- [ ] Neon 專案 `youngadult` 已建立，`DATABASE_URL` 已貼到 `youngadult-api`
+- [ ] Blueprint 不再建立 `youngadult-db`
 - [ ] `youngadult-api` Live
 - [ ] `youngadult-admin` Live
-- [ ] 能登入代禱審核
-- [ ] 電腦關機後，雲端後台與 App 仍可用
+- [ ] 社青後台顯示「社青牧區」
+- [ ] 成二後台仍可開（`churchsheep-db` 未 Suspend）
