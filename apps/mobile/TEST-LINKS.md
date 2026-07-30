@@ -8,15 +8,18 @@ Expo 專案：https://expo.dev/accounts/davidping/projects/youngadult
 
 ## Android（下載 APK 安裝）
 
-直接下載（連雲端 API）：
+**請用這個連結（可傳 LINE，較不易卡住）：**
 
-https://expo.dev/artifacts/eas/VdNraeEf1eyr1HmLwATbJPqvlCXVZXnDhkUmYjLVh8Q.apk
+https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.0-preview/youngadult-1.1.0.apk
 
-建置紀錄：  
-https://expo.dev/accounts/davidping/projects/youngadult/builds/3bd77129-a17a-4b4e-966b-288983091c16
+Release 頁：https://github.com/davidping-happy/YoungAdult/releases/tag/v1.1.0-preview
 
-1. 手機下載 APK → 允許「未知來源」→ 安裝 **社青牧區**
-2. 註冊（密碼至少 10 字）或登入
+1. 用 **Chrome** 打開連結（不要在 LINE 內建瀏覽器下載）
+2. 下載完成後，到手機 **檔案／下載** 資料夾點 `youngadult-1.1.0.apk` 安裝
+3. 若畫面卡在「下載中…」但已顯示 76MB／76MB：點 **取消**，改到「下載」資料夾找檔案開啟即可
+4. 允許「未知來源」後安裝 **社青牧區**
+
+（Expo 原始連結常被 LINE 擋、且易卡在 100%，請改用上方 GitHub 連結。）
 
 ---
 
@@ -44,8 +47,9 @@ https://expo.dev/accounts/davidping/projects/youngadult
 ```
 【社青牧區 App 測試】
 
-Android：下載 APK 安裝（允許未知來源）
-→ https://expo.dev/artifacts/eas/VdNraeEf1eyr1HmLwATbJPqvlCXVZXnDhkUmYjLVh8Q.apk
+Android（請用 Chrome 開，不要用 LINE 內建瀏覽器）：
+→ https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.0-preview/youngadult-1.1.0.apk
+下載完到「檔案／下載」點 APK 安裝
 
 iPhone：先裝 App Store「Expo Go」，再開
 → https://expo.dev/accounts/davidping/projects/youngadult/updates/1928e6a2-0674-447f-a9c9-87a782eceabd
