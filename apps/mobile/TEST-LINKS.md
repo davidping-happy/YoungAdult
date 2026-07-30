@@ -8,11 +8,13 @@ Expo 專案：https://expo.dev/accounts/davidping/projects/youngadult
 
 ## Android（下載 APK 安裝）
 
-**請用這個連結（可傳 LINE，較不易卡住）：**
+**請用這個連結（可傳 LINE；repo 須為 Public 才能下載）：**
 
 https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.0-preview/youngadult-1.1.0.apk
 
 Release 頁：https://github.com/davidping-happy/YoungAdult/releases/tag/v1.1.0-preview
+
+> 若出現 404／無法存取：到 GitHub → YoungAdult → Settings → Change visibility → **Public**。
 
 1. 用 **Chrome** 打開連結（不要在 LINE 內建瀏覽器下載）
 2. 下載完成後，到手機 **檔案／下載** 資料夾點 `youngadult-1.1.0.apk` 安裝
