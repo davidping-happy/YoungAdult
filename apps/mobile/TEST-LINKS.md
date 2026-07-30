@@ -8,11 +8,11 @@ Expo 專案：https://expo.dev/accounts/davidping/projects/youngadult
 
 ## Android（下載 APK 安裝）
 
-建置進行中／完成後到這裡下載最新 **APK**：
+直接下載（連雲端 API）：
 
-https://expo.dev/accounts/davidping/projects/youngadult/builds
+https://expo.dev/artifacts/eas/VdNraeEf1eyr1HmLwATbJPqvlCXVZXnDhkUmYjLVh8Q.apk
 
-目前這次建置：  
+建置紀錄：  
 https://expo.dev/accounts/davidping/projects/youngadult/builds/3bd77129-a17a-4b4e-966b-288983091c16
 
 1. 手機下載 APK → 允許「未知來源」→ 安裝 **社青牧區**
@@ -45,8 +45,7 @@ https://expo.dev/accounts/davidping/projects/youngadult
 【社青牧區 App 測試】
 
 Android：下載 APK 安裝（允許未知來源）
-→ https://expo.dev/accounts/davidping/projects/youngadult/builds
-（完成後點最新 preview → Download）
+→ https://expo.dev/artifacts/eas/VdNraeEf1eyr1HmLwATbJPqvlCXVZXnDhkUmYjLVh8Q.apk
 
 iPhone：先裝 App Store「Expo Go」，再開
 → https://expo.dev/accounts/davidping/projects/youngadult/updates/1928e6a2-0674-447f-a9c9-87a782eceabd
