@@ -51,3 +51,5 @@ tools/
 coverage/
 
 apps/mobile/dist/
+
+dist-apk/
