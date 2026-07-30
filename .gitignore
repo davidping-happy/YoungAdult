@@ -49,3 +49,5 @@ tools/
 
 # Test / coverage
 coverage/
+
+apps/mobile/dist/

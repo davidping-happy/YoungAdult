@@ -43,19 +43,18 @@ https://youngadult-admin.onrender.com/prayer
 
 ---
 
-## 方式 B：Android APK（推薦給測試者）
+## 方式 B：Android／iPhone 給別人測試（下載）
 
-1. 下載最新 APK（連雲端，電腦可關機）
-2. 允許「未知來源」後安裝「社青牧區」
-3. 註冊帳號即可
+完整說明與連結見 **[TEST-LINKS.md](./TEST-LINKS.md)**。
 
-舊版 APK 若連不上，到「更多 → 伺服器連線設定」貼：
+摘要：
 
-```
-https://youngadult-api.onrender.com
-```
+| 系統 | 怎麼測 |
+|------|--------|
+| Android | 下載 APK 安裝（Expo Builds） |
+| iPhone | 先裝 App Store「Expo Go」，再開專案頁 Open in Expo Go |
 
-詳見 [APK-GUIDE.md](./APK-GUIDE.md)、[CLOUD-DEPLOY.md](../../docs/CLOUD-DEPLOY.md)。
+專案頁：https://expo.dev/accounts/davidping/projects/youngadult
 
 ---
 

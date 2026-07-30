@@ -4,6 +4,12 @@
     "slug": "youngadult",
     "owner": "davidping",
     "version": "1.1.0",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/9c74e2a2-557e-41ef-9042-9bc4499076be"
+    },
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
     "scheme": "youngadult",
@@ -36,7 +42,7 @@
     "extra": {
       "apiBase": "https://youngadult-api.onrender.com/api",
       "eas": {
-        "projectId": ""
+        "projectId": "9c74e2a2-557e-41ef-9042-9bc4499076be"
       }
     }
   }
