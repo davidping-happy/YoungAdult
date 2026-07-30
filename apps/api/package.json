@@ -1,7 +1,7 @@
 {
-  "name": "@churchsheep/api",
+  "name": "@youngadult/api",
   "version": "1.1.0",
-  "description": "教會 APP 後端 API — NestJS 核心服務層",
+  "description": "社青牧區 後端 API — NestJS 核心服務層",
   "main": "dist/main.js",
   "scripts": {
     "build": "node -e \"const fs=require('fs');fs.rmSync('dist',{recursive:true,force:true});try{fs.unlinkSync('tsconfig.tsbuildinfo')}catch{}\" && tsc -p tsconfig.json",

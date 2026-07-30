@@ -1,5 +1,8 @@
 # 社青牧區 APP（youngadult）
 
+> GitHub：https://github.com/davidping-happy/YoungAdult  
+> （成二牧區是另一個專案：https://github.com/davidping-happy/sheep — 不要搞混）
+
 內容整合 + 個人化牧養工具。自建 / 半自建架構，強調**原始碼所有權**與**資料自主權**（相較 Subsplash / Tithe.ly 等 SaaS）。
 
 > 完整系統設計文件見 [`docs/system-design.md`](docs/system-design.md)。

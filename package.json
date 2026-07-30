@@ -2,7 +2,7 @@
   "name": "youngadult",
   "version": "1.1.0",
   "private": true,
-  "description": "教會 APP - 內容整合 + 個人化牧養工具 (社青牧區 monorepo)",
+  "description": "社青牧區 APP - 內容整合 + 個人化牧養工具 (社青牧區 monorepo)",
   "workspaces": [
     "packages/*",
     "apps/api",

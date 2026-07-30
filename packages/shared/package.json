@@ -1,5 +1,5 @@
 {
-  "name": "@churchsheep/shared",
+  "name": "@youngadult/shared",
   "version": "1.1.0",
   "description": "跨端共用：RBAC 角色、列舉、DTO 型別",
   "main": "src/index.ts",

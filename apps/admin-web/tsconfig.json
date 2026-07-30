@@ -18,7 +18,7 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@churchsheep/shared": [
+      "@youngadult/shared": [
         "../../packages/shared/src"
       ]
     },
