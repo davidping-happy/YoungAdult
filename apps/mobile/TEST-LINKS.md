@@ -32,7 +32,7 @@ iPhone **不能裝 APK**。請用 Expo Go：
 1. App Store 安裝 **Expo Go**（需與本專案相同 SDK 54）
 2. 用 iPhone 相機／Safari 打開更新頁，點 **Open with Expo Go**：
 
-https://expo.dev/accounts/davidping/projects/youngadult/updates/1928e6a2-0674-447f-a9c9-87a782eceabd
+https://expo.dev/accounts/davidping/projects/youngadult/updates/9bdf9d4f-307e-4802-8dae-6b0bd7d3c171
 
 或專案首頁：  
 https://expo.dev/accounts/davidping/projects/youngadult  
@@ -54,7 +54,7 @@ Android（請用 Chrome 開，不要用 LINE 內建瀏覽器）：
 下載完到「檔案／下載」點 APK 安裝
 
 iPhone：先裝 App Store「Expo Go」，再開
-→ https://expo.dev/accounts/davidping/projects/youngadult/updates/1928e6a2-0674-447f-a9c9-87a782eceabd
+→ https://expo.dev/accounts/davidping/projects/youngadult/updates/9bdf9d4f-307e-4802-8dae-6b0bd7d3c171
    點 Open with Expo Go
 
 註冊密碼至少 10 個字。
