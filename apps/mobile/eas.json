@@ -9,29 +9,18 @@
       "android": {
         "buildType": "apk"
       },
-      "ios": {
-        "simulator": false,
-        "resourceClass": "m-medium"
-      },
       "env": {
         "EXPO_PUBLIC_API_BASE": "https://youngadult-api.onrender.com/api"
       },
       "channel": "preview"
     },
-    "preview-simulator": {
-      "distribution": "internal",
-      "ios": {
-        "simulator": true
-      },
-      "env": {
-        "EXPO_PUBLIC_API_BASE": "https://youngadult-api.onrender.com/api"
-      },
-      "channel": "preview-simulator"
-    },
     "production": {
       "distribution": "store",
       "android": {
         "buildType": "app-bundle"
+      },
+      "ios": {
+        "resourceClass": "m-medium"
       },
       "env": {
         "EXPO_PUBLIC_API_BASE": "https://youngadult-api.onrender.com/api"
