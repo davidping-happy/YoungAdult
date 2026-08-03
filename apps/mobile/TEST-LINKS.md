@@ -4,12 +4,14 @@
 
 ## 下載連結（請用 Chrome 開）
 
-https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.0-preview/youngadult-1.1.0.apk
+https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.1-preview/youngadult-1.1.1.apk
 
-Release 頁：https://github.com/davidping-happy/YoungAdult/releases/tag/v1.1.0-preview
+（若尚未出 1.1.1，暫用：https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.0-preview/youngadult-1.1.0.apk）
+
+Release 頁：https://github.com/davidping-happy/YoungAdult/releases
 
 1. 用 **Chrome** 打開（不要用 LINE 內建瀏覽器）
-2. 下載完到「檔案／下載」點 `youngadult-1.1.0.apk` 安裝
+2. 下載完到「檔案／下載」點 APK 安裝（請裝最新版 1.1.1）
 3. 允許「未知來源」後開啟 **社青牧區**
 
 API：https://youngadult-api.onrender.com/api  
@@ -20,9 +22,12 @@ API：https://youngadult-api.onrender.com/api
 ```
 【社青牧區 App 測試】
 請用 Chrome 下載安裝（勿用 LINE 內建瀏覽器）：
-https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.0-preview/youngadult-1.1.0.apk
-下載完到「檔案／下載」點 APK 安裝。
+https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.1-preview/youngadult-1.1.1.apk
+下載完到「檔案／下載」點 APK 安裝（請覆蓋舊版）。
 註冊密碼至少 10 字。第一次可能等 30～60 秒。
+
+iPhone 用 Safari：
+https://youngadult-admin.onrender.com/app/
 ```
 
 ## iPhone（Safari 網頁版，免 Expo／免年費）

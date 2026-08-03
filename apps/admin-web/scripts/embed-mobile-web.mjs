@@ -1,6 +1,7 @@
 /**
  * 將 apps/mobile 匯出為靜態網頁，放到 public/app（iPhone Safari 測試用）。
  * 在 Render／本機於 next build 前執行。
+ * 版面與成二牧區同步（保留社青品牌／API）。
  */
 import { spawnSync } from 'node:child_process';
 import {
