@@ -6,9 +6,7 @@
 
 https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.1-preview/youngadult-1.1.1.apk
 
-（若尚未出 1.1.1，暫用：https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.0-preview/youngadult-1.1.0.apk）
-
-Release 頁：https://github.com/davidping-happy/YoungAdult/releases
+Release 頁：https://github.com/davidping-happy/YoungAdult/releases/tag/v1.1.1-preview
 
 1. 用 **Chrome** 打開（不要用 LINE 內建瀏覽器）
 2. 下載完到「檔案／下載」點 APK 安裝（請裝最新版 1.1.1）
