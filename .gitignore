@@ -51,5 +51,6 @@ tools/
 coverage/
 
 apps/mobile/dist/
+apps/admin-web/public/app/
 
 dist-apk/

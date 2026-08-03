@@ -51,10 +51,13 @@ https://youngadult-admin.onrender.com/prayer
 
 | 系統 | 怎麼測 |
 |------|--------|
-| Android | 下載 APK 安裝（Expo Builds） |
-| iPhone | 先裝 App Store「Expo Go」，再開專案頁 Open in Expo Go |
+| Android | GitHub Release 下載 APK（Chrome，勿用 LINE 內建瀏覽器） |
+| iPhone | Safari 開網頁版（不必 Expo Go／不必 Expo 帳號） |
 
-專案頁：https://expo.dev/accounts/davidping/projects/youngadult
+iPhone（Safari）：  
+https://youngadult-admin.onrender.com/app/
+
+Android APK：見 [TEST-LINKS.md](./TEST-LINKS.md)
 
 ---
 
