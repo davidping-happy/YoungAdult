@@ -1,0 +1,81 @@
+const PRIMARY = '/downloads/youngadult-latest.apk';
+const GITHUB =
+  'https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.1-preview/youngadult-1.1.1.apk';
+const EXPO =
+  'https://expo.dev/artifacts/eas/5cWvVh7VAhXbNQStapJiAczCeltcK3kXqZzxHysF3E8.apk';
+const RELEASE =
+  'https://github.com/davidping-happy/YoungAdult/releases/tag/v1.1.1-preview';
+
+export default function DownloadPage() {
+  return (
+    <div className="card" style={{ maxWidth: 560 }}>
+      <h2>社青牧區 App — Android 下載</h2>
+      <p className="muted">
+        請用 <strong>Chrome</strong> 開啟本頁（不要用 LINE 內建瀏覽器）。
+      </p>
+
+      <ol style={{ lineHeight: 1.7, paddingLeft: 20 }}>
+        <li>
+          點下方「主要下載」
+        </li>
+        <li>
+          到手機「檔案／下載」點 <code>youngadult-latest.apk</code> 安裝
+        </li>
+        <li>允許「未知來源」後開啟「社青牧區」</li>
+      </ol>
+
+      <p style={{ marginTop: 20 }}>
+        <a
+          href={PRIMARY}
+          style={{
+            display: 'inline-block',
+            padding: '12px 18px',
+            background: 'var(--accent)',
+            color: '#fff',
+            borderRadius: 10,
+            textDecoration: 'none',
+            fontWeight: 600,
+          }}
+        >
+          主要下載（本站鏡射）
+        </a>
+      </p>
+
+      <h3 style={{ marginTop: 28 }}>若主要連結失敗</h3>
+      <ul style={{ lineHeight: 1.8 }}>
+        <li>
+          <a href={EXPO} target="_blank" rel="noreferrer">
+            備用 1：Expo 直連
+          </a>
+        </li>
+        <li>
+          <a href={GITHUB} target="_blank" rel="noreferrer">
+            備用 2：GitHub Release
+          </a>
+        </li>
+        <li>
+          <a href={RELEASE} target="_blank" rel="noreferrer">
+            Release 說明頁
+          </a>
+        </li>
+      </ul>
+
+      <h3 style={{ marginTop: 28 }}>下載卡住時</h3>
+      <ul className="muted" style={{ lineHeight: 1.8 }}>
+        <li>關掉 LINE，改用 Chrome 重開本頁</li>
+        <li>
+          進度到 100% 卻一直「下載中」：在通知列取消後，到「檔案／下載」直接點 APK
+        </li>
+        <li>換「主要下載」或「備用 1」再試</li>
+        <li>已安裝舊版可直接覆蓋安裝 1.1.1</li>
+      </ul>
+
+      <p className="muted" style={{ marginTop: 24 }}>
+        iPhone 請用 Safari：{' '}
+        <a href="/app/" target="_blank" rel="noreferrer">
+          /app/
+        </a>
+      </p>
+    </div>
+  );
+}
