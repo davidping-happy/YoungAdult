@@ -1,7 +1,6 @@
 /**
- * å°?apps/mobile ?¯å‡º?ºé??‹ç¶²?ï??¾åˆ° public/appï¼ˆiPhone Safari æ¸¬è©¦?¨ï???
- * ??Renderï¼æœ¬æ©Ÿæ–¼ next build ?åŸ·è¡Œã€?
- * ?ˆé¢?‡æ?äºŒç‰§?€?Œæ­¥ï¼ˆä??™ç¤¾?’å??Œï?APIï¼‰ã€?
+ * Export apps/mobile as static web into public/app (iPhone Safari testing).
+ * Runs before next build on Render / local.
  */
 import { spawnSync } from 'node:child_process';
 import {
@@ -37,14 +36,14 @@ function run(cmd, args, cwd, env = {}) {
 }
 
 if (!existsSync(mobileRoot)) {
-  console.error('?¾ä???apps/mobileï¼Œç•¥?ç¶²?ç?åµŒå…¥');
+  console.error('apps/mobile not found');
   process.exit(1);
 }
 
-console.log('å®‰è? mobile ä¾è³´??);
+console.log('Installing mobile dependencies...');
 run('npm', ['install', '--legacy-peer-deps', '--include=dev'], mobileRoot);
 
-console.log(`?¯å‡º Expo Webï¼ˆAPI=${apiBase}, base=/appï¼‰â€¦`);
+console.log(`Exporting Expo Web (API=${apiBase}, base=/app)...`);
 run('npx', ['expo', 'export', '--platform', 'web'], mobileRoot, {
   EXPO_PUBLIC_API_BASE: apiBase,
   EXPO_WEB_BASE_URL: '/app',
@@ -52,11 +51,11 @@ run('npx', ['expo', 'export', '--platform', 'web'], mobileRoot, {
 });
 
 if (!existsSync(distDir)) {
-  console.error('expo export ?ªç”¢??dist/');
+  console.error('expo export did not produce dist/');
   process.exit(1);
 }
 
 rmSync(outDir, { recursive: true, force: true });
 mkdirSync(outDir, { recursive: true });
 cpSync(distDir, outDir, { recursive: true });
-console.log(`å·²å¯«??${outDir}`);
+console.log(`Wrote ${outDir}`);
