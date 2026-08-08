@@ -1,6 +1,6 @@
 {
   "name": "@youngadult/mobile",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "社青牧區行動端 — React Native (Expo)",
   "private": true,
   "main": "index.ts",

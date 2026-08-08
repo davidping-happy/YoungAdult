@@ -3,7 +3,7 @@
     "name": "社青牧區",
     "slug": "youngadult",
     "owner": "davidping",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "runtimeVersion": {
       "policy": "sdkVersion"
     },
@@ -18,11 +18,11 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "org.church.youngadult",
-      "buildNumber": "2"
+      "buildNumber": "3"
     },
     "android": {
       "package": "org.church.youngadult",
-      "versionCode": 5,
+      "versionCode": 6,
       "usesCleartextTraffic": true,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
