@@ -1,4 +1,7 @@
-const PRIMARY = '/downloads/youngadult-latest.apk';
+/** Prefer API mirror — Expo/GitHub often stall in TW / LINE */
+const PRIMARY =
+  'https://youngadult-api.onrender.com/downloads/youngadult-latest.apk';
+const ADMIN_MIRROR = '/downloads/youngadult-latest.apk';
 const GITHUB =
   'https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.2-preview/youngadult-1.1.2.apk';
 const EXPO =
@@ -17,9 +20,7 @@ export default function DownloadPage() {
 
       <ol style={{ lineHeight: 1.7, paddingLeft: 20 }}>
         <li>點下方「主要下載」</li>
-        <li>
-          到手機「檔案／下載」點 <code>youngadult-latest.apk</code> 安裝（可覆蓋舊版）
-        </li>
+        <li>到手機「檔案／下載」點 APK 安裝（可覆蓋舊版）</li>
         <li>允許「未知來源」後開啟「社青牧區」</li>
       </ol>
 
@@ -36,20 +37,23 @@ export default function DownloadPage() {
             fontWeight: 600,
           }}
         >
-          主要下載（本站鏡射）
+          主要下載（API 鏡射）
         </a>
       </p>
 
       <h3 style={{ marginTop: 28 }}>若主要連結失敗</h3>
       <ul style={{ lineHeight: 1.8 }}>
         <li>
+          <a href={ADMIN_MIRROR}>備用：後台鏡射</a>
+        </li>
+        <li>
           <a href={EXPO} target="_blank" rel="noreferrer">
-            備用 1：Expo 直連
+            備用：Expo 直連
           </a>
         </li>
         <li>
           <a href={GITHUB} target="_blank" rel="noreferrer">
-            備用 2：GitHub Release
+            備用：GitHub Release
           </a>
         </li>
         <li>
@@ -63,9 +67,9 @@ export default function DownloadPage() {
       <ul className="muted" style={{ lineHeight: 1.8 }}>
         <li>關掉 LINE，改用 Chrome 重開本頁</li>
         <li>
-          進度到 100% 卻一直「下載中」：在通知列取消後，到「檔案／下載」直接點 APK
+          進度到 100% 卻一直「下載中」：取消後到「檔案／下載」直接點 APK
         </li>
-        <li>換「主要下載」或「備用 1」再試</li>
+        <li>改點「主要下載（API 鏡射）」</li>
       </ul>
 
       <p className="muted" style={{ marginTop: 24 }}>

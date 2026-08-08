@@ -9,7 +9,7 @@ services:
     plan: free
     rootDir: apps/api
     # 免費方案 build 常省略 devDependencies；必須 --include=dev 才能跑 tsc / prisma
-    buildCommand: npm install --legacy-peer-deps --include=dev && npx prisma generate && npm run build
+    buildCommand: npm install --legacy-peer-deps --include=dev && npx prisma generate && npm run build:render
     startCommand: npm run start:render
     healthCheckPath: /api/health
     envVars:
@@ -20,6 +20,10 @@ services:
       # 在 Render Dashboard 貼上 Neon 的連線字串（含 ?sslmode=require）
       - key: DATABASE_URL
         sync: false
+      - key: APK_MIRROR_URL
+        value: https://expo.dev/artifacts/eas/SkKH8M6I9zjqROMeLs5U8y6NK0kKDRdJsuQiOZBDmeU.apk
+      - key: APK_FILE_NAME
+        value: youngadult-1.1.2.apk
       - key: CORS_ORIGINS
         value: "http://localhost:3001,http://127.0.0.1:3001,http://localhost:8081,http://127.0.0.1:8081,https://youngadult-admin.onrender.com"
       - key: JWT_ACCESS_SECRET
