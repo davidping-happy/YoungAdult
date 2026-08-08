@@ -1,25 +1,24 @@
 const PRIMARY = '/downloads/youngadult-latest.apk';
 const GITHUB =
-  'https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.1-preview/youngadult-1.1.1.apk';
+  'https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.2-preview/youngadult-1.1.2.apk';
 const EXPO =
-  'https://expo.dev/artifacts/eas/5cWvVh7VAhXbNQStapJiAczCeltcK3kXqZzxHysF3E8.apk';
+  'https://expo.dev/artifacts/eas/SkKH8M6I9zjqROMeLs5U8y6NK0kKDRdJsuQiOZBDmeU.apk';
 const RELEASE =
-  'https://github.com/davidping-happy/YoungAdult/releases/tag/v1.1.1-preview';
+  'https://github.com/davidping-happy/YoungAdult/releases/tag/v1.1.2-preview';
 
 export default function DownloadPage() {
   return (
     <div className="card" style={{ maxWidth: 560 }}>
       <h2>社青牧區 App — Android 下載</h2>
       <p className="muted">
-        請用 <strong>Chrome</strong> 開啟本頁（不要用 LINE 內建瀏覽器）。
+        目前版本 <strong>1.1.2</strong>。請用 <strong>Chrome</strong> 開啟本頁（不要用
+        LINE 內建瀏覽器）。
       </p>
 
       <ol style={{ lineHeight: 1.7, paddingLeft: 20 }}>
+        <li>點下方「主要下載」</li>
         <li>
-          點下方「主要下載」
-        </li>
-        <li>
-          到手機「檔案／下載」點 <code>youngadult-latest.apk</code> 安裝
+          到手機「檔案／下載」點 <code>youngadult-latest.apk</code> 安裝（可覆蓋舊版）
         </li>
         <li>允許「未知來源」後開啟「社青牧區」</li>
       </ol>
@@ -67,7 +66,6 @@ export default function DownloadPage() {
           進度到 100% 卻一直「下載中」：在通知列取消後，到「檔案／下載」直接點 APK
         </li>
         <li>換「主要下載」或「備用 1」再試</li>
-        <li>已安裝舊版可直接覆蓋安裝 1.1.1</li>
       </ul>
 
       <p className="muted" style={{ marginTop: 24 }}>

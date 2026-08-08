@@ -14,8 +14,8 @@ const outDir = path.join(adminRoot, 'public', 'downloads');
 
 const APK_URL =
   process.env.APK_MIRROR_URL ||
-  'https://expo.dev/artifacts/eas/5cWvVh7VAhXbNQStapJiAczCeltcK3kXqZzxHysF3E8.apk';
-const FILE_NAME = process.env.APK_FILE_NAME || 'youngadult-1.1.1.apk';
+  'https://expo.dev/artifacts/eas/SkKH8M6I9zjqROMeLs5U8y6NK0kKDRdJsuQiOZBDmeU.apk';
+const FILE_NAME = process.env.APK_FILE_NAME || 'youngadult-1.1.2.apk';
 const LATEST_NAME = 'youngadult-latest.apk';
 
 async function main() {
