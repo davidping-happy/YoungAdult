@@ -93,7 +93,7 @@ function HomeStackNavigator() {
       <HomeStack.Screen
         name="Devotions"
         component={DevotionsScreen}
-        options={{ title: '晨禱靈修筆記' }}
+        options={{ title: '靈修隨記' }}
       />
     </HomeStack.Navigator>
   );
