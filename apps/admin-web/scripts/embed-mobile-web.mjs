@@ -1,7 +1,7 @@
 /**
- * 將 apps/mobile 匯出為靜態網頁，放到 public/app（iPhone Safari 測試用）。
- * 在 Render／本機於 next build 前執行。
- * 版面與成二牧區同步（保留社青品牌／API）。
+ * �?apps/mobile ?�出?��??�網?��??�到 public/app（iPhone Safari 測試?��???
+ * ??Render／本機於 next build ?�執行�?
+ * ?�面?��?二牧?�?�步（�??�社?��??��?API）�?
  */
 import { spawnSync } from 'node:child_process';
 import {
@@ -37,14 +37,14 @@ function run(cmd, args, cwd, env = {}) {
 }
 
 if (!existsSync(mobileRoot)) {
-  console.error('找不到 apps/mobile，略過網頁版嵌入');
+  console.error('?��???apps/mobile，略?�網?��?嵌入');
   process.exit(1);
 }
 
-console.log('安裝 mobile 依賴…');
+console.log('安�? mobile 依賴??);
 run('npm', ['install', '--legacy-peer-deps', '--include=dev'], mobileRoot);
 
-console.log(`匯出 Expo Web（API=${apiBase}, base=/app）…`);
+console.log(`?�出 Expo Web（API=${apiBase}, base=/app）…`);
 run('npx', ['expo', 'export', '--platform', 'web'], mobileRoot, {
   EXPO_PUBLIC_API_BASE: apiBase,
   EXPO_WEB_BASE_URL: '/app',
@@ -52,11 +52,11 @@ run('npx', ['expo', 'export', '--platform', 'web'], mobileRoot, {
 });
 
 if (!existsSync(distDir)) {
-  console.error('expo export 未產生 dist/');
+  console.error('expo export ?�產??dist/');
   process.exit(1);
 }
 
 rmSync(outDir, { recursive: true, force: true });
 mkdirSync(outDir, { recursive: true });
 cpSync(distDir, outDir, { recursive: true });
-console.log(`已寫入 ${outDir}`);
+console.log(`已寫??${outDir}`);
