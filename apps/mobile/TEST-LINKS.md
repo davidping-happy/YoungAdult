@@ -10,10 +10,10 @@ https://youngadult-admin.onrender.com/download
 https://youngadult-admin.onrender.com/downloads/youngadult-latest.apk
 
 GitHub：  
-https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.4-preview/youngadult-1.1.4.apk
+https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.5-preview/youngadult-1.1.5.apk
 
 Expo 直連：  
-https://expo.dev/artifacts/eas/b1kCCDRfdXcexcZlYsfIvvfdPKNUomBN2KPedMGoOjw.apk
+https://expo.dev/artifacts/eas/vnzUgadwNpZu1-Qsvq0ZVFvS7LOACB3Edl6pLyszL-4.apk
 
 1. 用 **Chrome** 打開（不要用 LINE 內建瀏覽器）
 2. 下載完到「檔案／下載」點 APK 安裝（覆蓋舊版）
@@ -22,7 +22,7 @@ https://expo.dev/artifacts/eas/b1kCCDRfdXcexcZlYsfIvvfdPKNUomBN2KPedMGoOjw.apk
 ## 短訊範本
 
 ```
-【社青牧區 App 1.1.4】
+【社青牧區 App 1.1.5】
 請用 Chrome 打開（勿用 LINE）：
 https://youngadult-admin.onrender.com/download
 點「主要下載」覆蓋安裝。

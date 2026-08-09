@@ -21,9 +21,9 @@ services:
       - key: DATABASE_URL
         sync: false
       - key: APK_MIRROR_URL
-        value: https://expo.dev/artifacts/eas/b1kCCDRfdXcexcZlYsfIvvfdPKNUomBN2KPedMGoOjw.apk
+        value: https://expo.dev/artifacts/eas/vnzUgadwNpZu1-Qsvq0ZVFvS7LOACB3Edl6pLyszL-4.apk
       - key: APK_FILE_NAME
-        value: youngadult-1.1.4.apk
+        value: youngadult-1.1.5.apk
       - key: CORS_ORIGINS
         value: "http://localhost:3001,http://127.0.0.1:3001,http://localhost:8081,http://127.0.0.1:8081,https://youngadult-admin.onrender.com"
       - key: JWT_ACCESS_SECRET
@@ -63,8 +63,8 @@ services:
       - key: EXPO_PUBLIC_API_BASE
         value: https://youngadult-api.onrender.com/api
       - key: APK_MIRROR_URL
-        value: https://expo.dev/artifacts/eas/b1kCCDRfdXcexcZlYsfIvvfdPKNUomBN2KPedMGoOjw.apk
+        value: https://expo.dev/artifacts/eas/vnzUgadwNpZu1-Qsvq0ZVFvS7LOACB3Edl6pLyszL-4.apk
       - key: APK_FILE_NAME
-        value: youngadult-1.1.4.apk
+        value: youngadult-1.1.5.apk
       - key: NEXT_TELEMETRY_DISABLED
         value: "1"
