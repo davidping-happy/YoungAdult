@@ -22,6 +22,7 @@ import LivestreamScreen from './screens/LivestreamScreen';
 import ArticlesScreen from './screens/ArticlesScreen';
 import ArticleDetailScreen from './screens/ArticleDetailScreen';
 import GroupsScreen from './screens/GroupsScreen';
+import ZoneDetailScreen from './screens/ZoneDetailScreen';
 import GroupDetailScreen from './screens/GroupDetailScreen';
 import AnnouncementsScreen from './screens/AnnouncementsScreen';
 import AnnouncementDetailScreen from './screens/AnnouncementDetailScreen';
@@ -69,7 +70,12 @@ function HomeStackNavigator() {
         component={GroupsScreen}
         options={{ title: '牧區・小組' }}
       />
-      <HomeStack.Screen
+            <HomeStack.Screen
+        name="ZoneDetail"
+        component={ZoneDetailScreen}
+        options={{ title: '小區介紹' }}
+      />
+<HomeStack.Screen
         name="GroupDetail"
         component={GroupDetailScreen}
         options={{ title: '小組介紹' }}
