@@ -14,8 +14,8 @@ const outDir = path.join(apiRoot, 'public', 'downloads');
 
 const APK_URL =
   process.env.APK_MIRROR_URL ||
-  'https://expo.dev/artifacts/eas/vnzUgadwNpZu1-Qsvq0ZVFvS7LOACB3Edl6pLyszL-4.apk';
-const FILE_NAME = process.env.APK_FILE_NAME || 'youngadult-1.1.5.apk';
+  'https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.7-preview/youngadult-1.1.7.apk';
+const FILE_NAME = process.env.APK_FILE_NAME || 'youngadult-1.1.7.apk';
 const LATEST_NAME = 'youngadult-latest.apk';
 
 async function main() {

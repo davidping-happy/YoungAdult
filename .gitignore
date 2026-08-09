@@ -11,7 +11,7 @@ out/
 next-env.d.ts
 *.tsbuildinfo
 
-# Env & secrets (NEVER commit — see security rules §6 CODE)
+# Env & secrets (NEVER commit ??see security rules §6 CODE)
 .env
 .env.*
 !.env.example
@@ -40,11 +40,14 @@ Thumbs.db
 apps/mobile/.expo/
 apps/mobile/android/
 apps/mobile/ios/
+apps/mobile/credentials.json
+apps/mobile/credentials/
 *.keystore
+*.jks
 *.apk
 *.aab
 
-# 本機下載的工具（cloudflared 等）
+# ?��?下�??�工?��?cloudflared 等�?
 tools/
 
 # Test / coverage
