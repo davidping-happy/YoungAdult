@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import {
   ActivityIndicator,
   FlatList,
@@ -8,6 +8,7 @@ import {
   Text,
   View,
 } from 'react-native';
+import { useFocusEffect } from '@react-navigation/native';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { FitRemoteImage } from '../components/FitRemoteImage';
 import { api, ApiError } from '../lib/api';
@@ -33,6 +34,7 @@ interface ZoneBrief {
   photoUrl?: string | null;
   imageUrls?: string[];
   groups: GroupBrief[];
+  groupCount?: number;
 }
 
 interface Area {
@@ -68,11 +70,13 @@ export default function GroupsScreen({ navigation }: Props) {
     }
   }, []);
 
-  useEffect(() => {
-    load();
-  }, [load]);
+  useFocusEffect(
+    useCallback(() => {
+      void load();
+    }, [load]),
+  );
 
-  if (loading) {
+  if (loading && areas.length === 0) {
     return (
       <View style={styles.center}>
         <ActivityIndicator />
@@ -144,7 +148,7 @@ export default function GroupsScreen({ navigation }: Props) {
               </Text>
             ) : null}
             <Text style={styles.meta}>
-              {z.groups?.length ?? 0} 個小組 · 點擊查看
+              {z.groupCount ?? z.groups?.length ?? 0} 個小組 · 點擊查看
             </Text>
           </Pressable>
         );
