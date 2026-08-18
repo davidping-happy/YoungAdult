@@ -13,7 +13,7 @@ https://youngadult-api.onrender.com/downloads/youngadult-latest.apk
 https://youngadult-admin.onrender.com/downloads/youngadult-latest.apk
 
 GitHub：  
-https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.7-preview/youngadult-1.1.7.apk
+https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.8-preview/youngadult-1.1.8.apk
 
 1. 用 **Chrome** 打開（不要用 LINE 內建瀏覽器）
 2. 下載完到「檔案／下載」點 APK 安裝（覆蓋舊版）
@@ -22,7 +22,7 @@ https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.7-preview/y
 ## 短訊範本
 
 ```
-【社青牧區 App 1.1.7】
+【社青牧區 App 1.1.8】
 請用 Chrome 打開（勿用 LINE）：
 https://youngadult-api.onrender.com/downloads/youngadult-latest.apk
 下載後覆蓋安裝。
