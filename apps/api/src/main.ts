@@ -10,6 +10,7 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   const config = app.get(ConfigService);
+
   // APK mirror for Android testers (avoid GitHub/Expo stall in TW)
   app.useStaticAssets(join(process.cwd(), 'public'), {
     index: false,
@@ -98,4 +99,10 @@ async function bootstrap() {
   await app.listen(port, '0.0.0.0');
   Logger.log(`API 已啟動於 http://0.0.0.0:${port}/api`, 'Bootstrap');
 }
-bootstrap();
+bootstrap().catch((err) => {
+  Logger.error(
+    err instanceof Error ? err.stack ?? err.message : String(err),
+    'Bootstrap',
+  );
+  process.exit(1);
+});
