@@ -1,7 +1,7 @@
 {
   "name": "@youngadult/api",
   "version": "1.1.0",
-  "description": "ç¤¾é’ç‰§å€ å¾Œç«¯ API â€” NestJS æ ¸å¿ƒæœå‹™å±¤",
+  "description": "ç¤¾é??§å? å¾Œç«¯ API ??NestJS ?¸å??å?å±?,
   "main": "dist/main.js",
   "scripts": {
     "build": "node -e \"const fs=require('fs');fs.rmSync('dist',{recursive:true,force:true});try{fs.unlinkSync('tsconfig.tsbuildinfo')}catch{}\" && tsc -p tsconfig.json",
@@ -10,7 +10,7 @@
     "start": "node dist/main.js",
     "start:dev": "nest start --watch",
     "start:prod": "node dist/main.js",
-    "start:render": "prisma migrate deploy && node dist/main.js",
+    "start:render": "npx prisma migrate deploy && node dist/main.js",
     "lint": "eslint \"src/**/*.ts\" --fix",
     "test": "jest",
     "prisma:generate": "prisma generate",
