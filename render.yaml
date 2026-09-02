@@ -1,6 +1,5 @@
-# Render Blueprintï¼šAPI + ç®¡ç?å¾Œå°ï¼ˆè??™åº«??Neonï¼Œè??ä??±ç”¨ Render ?è²»é¡åº¦ï¼?
-# ?‡ä»¶ï¼šhttps://render.com/docs/blueprint-spec
-# ?ä?ç¹¼ç???Render ??churchsheep-dbï¼›ç¤¾?’ç”¨ Neon ?è²» Postgresï¼ˆè? docs/CLOUD-DEPLOY.mdï¼?
+# Render Blueprint: API + Admin (DB on Neon; free tier)
+# Docs: https://render.com/docs/blueprint-spec
 
 services:
   - type: web
@@ -8,16 +7,14 @@ services:
     runtime: node
     plan: free
     rootDir: apps/api
-    # ?¿åœ¨ build ä¸‹è?å¤§å? APKï¼ˆæ? OOMï¼é€¾æ?å°è‡´ Deploy failedï¼?
     buildCommand: npm install --legacy-peer-deps --include=dev && npx prisma generate && npm run build
-    startCommand: node dist/main.js
+    startCommand: npx prisma db push --skip-generate; node dist/main.js
     healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         value: "3000"
-      # ??Render Dashboard è²¼ä? Neon ?„é€??å­—ä¸²ï¼ˆå« ?sslmode=requireï¼?
       - key: DATABASE_URL
         sync: false
       - key: APK_MIRROR_URL
@@ -42,14 +39,14 @@ services:
         value: https://www.youtube.com/@breadoflifechristianchurch9830
       - key: SEED_ADMIN_PASSWORD
         sync: false
+      - key: BRAND_NAME
+        value: ????
 
   - type: web
     name: youngadult-admin
     runtime: node
     plan: free
     rootDir: apps/admin-web
-    # å¿…é? -H 0.0.0.0ï¼Œå¦??Render å°å?????°ï??½å?ï¼é€¾æ?ï¼?
-    # build:render ?ƒæ?è¡Œå?ç«¯ç¶²?ç?åµŒå…¥ /appï¼ˆiPhone Safari æ¸¬è©¦ï¼Œå? Expo ?»å…¥ï¼?
     buildCommand: npm install --legacy-peer-deps --include=dev && npm run build:render
     startCommand: npx next start -H 0.0.0.0 -p $PORT
     healthCheckPath: /
