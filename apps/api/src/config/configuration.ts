@@ -16,6 +16,11 @@ export default () => ({
     channelUrl:
       process.env.YOUTUBE_CHANNEL_URL ??
       'https://www.youtube.com/@breadoflifechristianchurch9830',
+    zoneChannelId:
+      process.env.YOUTUBE_ZONE_CHANNEL_ID ?? 'UCjqMaLCix8DJQTLoLTZtFHA',
+    zoneChannelUrl:
+      process.env.YOUTUBE_ZONE_CHANNEL_URL ??
+      'https://www.youtube.com/@高雄靈糧堂社青牧區',
   },
   fcm: {
     projectId: process.env.FCM_PROJECT_ID ?? '',
