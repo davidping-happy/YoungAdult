@@ -7,6 +7,16 @@ const nextConfig = {
       process.env.NEXT_PUBLIC_API_BASE ??
       'https://youngadult-api.onrender.com/api',
   },
+  async redirects() {
+    return [
+      {
+        source: '/downloads/youngadult-latest.apk',
+        destination:
+          'https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.12-preview/youngadult-1.1.12.apk',
+        permanent: false,
+      },
+    ];
+  },
   async rewrites() {
     // Expo Web SPA：未知路徑回到 index.html
     return [

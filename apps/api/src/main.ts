@@ -20,6 +20,9 @@ async function bootstrap() {
   ensureDbSsl();
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   const config = app.get(ConfigService);
+  const latestApkUrl =
+    process.env.APK_MIRROR_URL ||
+    'https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.12-preview/youngadult-1.1.12.apk';
 
   // APK mirror for Android testers (avoid GitHub/Expo stall in TW)
   app.useStaticAssets(join(process.cwd(), 'public'), {
@@ -34,6 +37,14 @@ async function bootstrap() {
       }
     },
   });
+  app.use(
+    '/downloads/youngadult-latest.apk',
+    (
+      _req: unknown,
+      res: { redirect: (code: number, url: string) => void },
+    ) =>
+      res.redirect(302, latestApkUrl),
+  );
 
   // 安全標頭 (§四.5 PLATFORM)
   app.use(helmet());

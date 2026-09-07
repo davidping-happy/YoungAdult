@@ -3,17 +3,17 @@ const PRIMARY =
   'https://youngadult-api.onrender.com/downloads/youngadult-latest.apk';
 const ADMIN_MIRROR = '/downloads/youngadult-latest.apk';
 const GITHUB =
-  'https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.8-preview/youngadult-1.1.8.apk';
+  'https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.12-preview/youngadult-1.1.12.apk';
 const EXPO = GITHUB;
 const RELEASE =
-  'https://github.com/davidping-happy/YoungAdult/releases/tag/v1.1.8-preview';
+  'https://github.com/davidping-happy/YoungAdult/releases/tag/v1.1.12-preview';
 
 export default function DownloadPage() {
   return (
     <div className="card" style={{ maxWidth: 560 }}>
       <h2>社青牧區 App — Android 下載</h2>
       <p className="muted">
-        目前版本 <strong>1.1.8</strong>。請用 <strong>Chrome</strong> 開啟本頁（不要用
+        目前版本 <strong>1.1.12</strong>。請用 <strong>Chrome</strong> 開啟本頁（不要用
         LINE 內建瀏覽器）。
       </p>
 
