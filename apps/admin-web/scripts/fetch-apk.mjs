@@ -1,6 +1,7 @@
 /**
  * 建置時把 APK 拉到 public/downloads，讓測試者從後台網域下載
  *（避開 GitHub Releases 在台灣／LINE 常卡住的問題）。
+ * 變更此檔可強制觸發 Render 重新抓最新版 APK。
  */
 import { createWriteStream, existsSync, mkdirSync, renameSync, unlinkSync } from 'node:fs';
 import { pipeline } from 'node:stream/promises';

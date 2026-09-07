@@ -1,6 +1,7 @@
 /**
  * Download APK into public/downloads during API build (Render).
  * Avoids GitHub/Expo download stalls for testers in TW.
+ * Touch file to force Render rebuild when mirror URL changes.
  */
 import { createWriteStream, existsSync, mkdirSync, renameSync, unlinkSync, copyFileSync } from 'node:fs';
 import { pipeline } from 'node:stream/promises';
