@@ -14,8 +14,8 @@ const outDir = path.join(adminRoot, 'public', 'downloads');
 
 const APK_URL =
   process.env.APK_MIRROR_URL ||
-  'https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.11-preview/youngadult-1.1.11.apk';
-const FILE_NAME = process.env.APK_FILE_NAME || 'youngadult-1.1.11.apk';
+  'https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.12-preview/youngadult-1.1.12.apk';
+const FILE_NAME = process.env.APK_FILE_NAME || 'youngadult-1.1.12.apk';
 const LATEST_NAME = 'youngadult-latest.apk';
 
 async function main() {
