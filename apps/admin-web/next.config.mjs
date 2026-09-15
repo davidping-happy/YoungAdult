@@ -12,7 +12,7 @@ const nextConfig = {
       {
         source: '/downloads/youngadult-latest.apk',
         destination:
-          'https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.12-preview/youngadult-1.1.12.apk',
+          'https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.13-preview/youngadult-1.1.13.apk',
         permanent: false,
       },
     ];

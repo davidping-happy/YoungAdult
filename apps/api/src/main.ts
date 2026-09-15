@@ -21,7 +21,7 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   const config = app.get(ConfigService);
   const latestApkUrl =
-    'https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.12-preview/youngadult-1.1.12.apk';
+    'https://github.com/davidping-happy/YoungAdult/releases/download/v1.1.13-preview/youngadult-1.1.13.apk';
 
   // APK mirror for Android testers (avoid GitHub/Expo stall in TW)
   app.useStaticAssets(join(process.cwd(), 'public'), {
